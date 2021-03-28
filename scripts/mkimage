@@ -205,7 +205,7 @@ elif [ "${BOOTLOADER}" = "bcm2835-bootloader" ]; then
   # create bootloader configuration
   echo "image: creating bootloader configuration..."
   cat << EOF > "${LE_TMP}/cmdline.txt"
-boot=UUID=${UUID_SYSTEM} disk=UUID=${UUID_STORAGE} quiet ${EXTRA_CMDLINE}
+boot=UUID=${UUID_SYSTEM} disk=UUID=${UUID_STORAGE} ${EXTRA_CMDLINE}
 EOF
 
   mcopy "${LE_TMP}/cmdline.txt" :: >"${SAVE_ERROR}" 2>&1 || show_error
@@ -258,7 +258,7 @@ elif [ "${BOOTLOADER}" = "u-boot" -a -n "${UBOOT_SYSTEM}" ]; then
 LABEL ${DISTRO}
   LINUX /${KERNEL_NAME}
   FDT /${DTB}
-  APPEND boot=UUID=${UUID_SYSTEM} disk=UUID=${UUID_STORAGE} quiet ${EXTRA_CMDLINE}
+  APPEND boot=UUID=${UUID_SYSTEM} disk=UUID=${UUID_STORAGE} ${EXTRA_CMDLINE}
 EOF
 
     mcopy -s "${LE_TMP}/extlinux" :: >"${SAVE_ERROR}" 2>&1 || show_error
