@@ -23,6 +23,9 @@
   # Kernel target
     KERNEL_TARGET="Image"
 
+  # extra cmdline for my build
+  EXTRA_CMDLINE="ssh"
+
   # NOOBS supported hex versions (legacy) is not relevant for RPi4
     unset NOOBS_HEX
 
