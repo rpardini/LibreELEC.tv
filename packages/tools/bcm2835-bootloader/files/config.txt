@@ -29,3 +29,7 @@ include distroconfig.txt
 # uncomment to enable analog audio output
 #dtparam=audio=on
 #audio_pwm_mode=1
+
+### HIFIBERRY ON KERNEL 5.x
+dtoverlay=hifiberry-dacplus,leds_off
+force_eeprom_read=0
