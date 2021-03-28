@@ -25,3 +25,7 @@ include distroconfig.txt
 
 # uncomment to enable infrared remote recevier connected to GPIO 18
 #dtoverlay=gpio-ir,gpio_pin=18
+
+### HIFIBERRY ON KERNEL 5.x
+dtoverlay=hifiberry-dacplus,leds_off
+force_eeprom_read=0
