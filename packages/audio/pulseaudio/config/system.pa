@@ -32,12 +32,6 @@ load-module module-card-restore
 ### that look up the default sink/source get the right value
 load-module module-default-device-restore
 
-### Make sure we always have a sink around, even if it is a null sink.
-load-module module-always-sink
-
-### Automatically suspend sinks/sources that become idle for too long
-load-module module-suspend-on-idle
-
 ### Automatically load modules for dbus
 .ifexists module-dbus-protocol.so
  load-module module-dbus-protocol
@@ -52,8 +46,7 @@ load-module module-suspend-on-idle
  load-module module-bluetooth-discover
 .endif
 
-.ifexists module-zeroconf-publish.so
-  load-module module-zeroconf-publish
-.endif
-
-load-module module-switch-on-connect
+load-module module-udev-detect
+load-module module-zeroconf-publish
+load-module module-native-protocol-tcp auth-anonymous=1
+set-default-sink alsa_output.2.stereo-fallback

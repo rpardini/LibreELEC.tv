@@ -1,6 +1,23 @@
 <advancedsettings version="1.0">
   <gputempcommand>/usr/bin/gputemp</gputempcommand>
 
-  <showexitbutton>false</showexitbutton>
-  <remotedelay>1</remotedelay>
+    <showexitbutton>false</showexitbutton>
+    <remotedelay>1</remotedelay>
+
+    <!-- feel free to steal my credentials. I don't mind. -->
+    <videodatabase>
+        <type>mysql</type>
+        <host>kodi-mysql</host>
+        <port>30306</port>
+        <user>root</user>
+        <pass>xbmc</pass>
+    </videodatabase>
+    <musicdatabase>
+        <type>mysql</type>
+        <host>kodi-mysql</host>
+        <port>30306</port>
+        <user>root</user>
+        <pass>xbmc</pass>
+    </musicdatabase>
+
 </advancedsettings>
