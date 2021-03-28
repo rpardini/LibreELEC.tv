@@ -1,31 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
 <sources>
+  <programs>
+    <default pathversion="1"/>
+  </programs>
   <video>
-      <default pathversion="1"></default>
-      <source>
-          <name>Videos</name>
-          <path pathversion="1">/storage/videos/</path>
-          <allowsharing>true</allowsharing>
-      </source>
-      <source>
-          <name>TV Shows</name>
-          <path pathversion="1">/storage/tvshows/</path>
-          <allowsharing>true</allowsharing>
-      </source>
+    <default pathversion="1"/>
+    <source>
+      <name>tv</name>
+      <path pathversion="1">nfs://kodi-fileserver/mnt/library/tv/</path>
+      <allowsharing>true</allowsharing>
+    </source>
+    <source>
+      <name>movies</name>
+      <path pathversion="1">nfs://kodi-fileserver/mnt/library/movies/</path>
+      <allowsharing>true</allowsharing>
+    </source>
+    <source>
+      <name>videos-from-yt</name>
+      <path pathversion="1">nfs://kodi-fileserver/mnt/library/videos/</path>
+      <allowsharing>true</allowsharing>
+    </source>
+    <source>
+      <name>streams</name>
+      <path pathversion="1">nfs://kodi-fileserver/mnt/adhoc/streams/</path>
+      <allowsharing>true</allowsharing>
+    </source>
+    <source>
+      <name>musicVideos</name>
+      <path pathversion="1">nfs://kodi-fileserver/mnt/adhoc/musicVideos/</path>
+      <allowsharing>true</allowsharing>
+    </source>
   </video>
   <music>
-      <default pathversion="1"></default>
-      <source>
-          <name>Music</name>
-          <path pathversion="1">/storage/music/</path>
-          <allowsharing>true</allowsharing>
-      </source>
+    <default pathversion="1"/>
+    <source>
+      <name>music adhoc mostly from yt</name>
+      <path pathversion="1">nfs://kodi-fileserver/mnt/adhoc/music/</path>
+      <allowsharing>true</allowsharing>
+    </source>
+    <source>
+      <name>videos-from-yt</name>
+      <path pathversion="1">nfs://kodi-fileserver/mnt/library/videos/</path>
+      <allowsharing>true</allowsharing>
+    </source>
   </music>
   <pictures>
-      <default pathversion="1"></default>
-      <source>
-          <name>Pictures</name>
-          <path pathversion="1">/storage/pictures/</path>
-          <allowsharing>true</allowsharing>
-      </source>
+    <default pathversion="1"/>
   </pictures>
+  <files>
+    <default pathversion="1"/>
+  </files>
+  <games>
+    <default pathversion="1"/>
+  </games>
 </sources>
