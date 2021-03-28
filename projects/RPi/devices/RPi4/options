@@ -24,3 +24,6 @@
 
   # Kernel target
     KERNEL_TARGET="Image"
+
+  # extra cmdline for my build
+  EXTRA_CMDLINE="ssh"

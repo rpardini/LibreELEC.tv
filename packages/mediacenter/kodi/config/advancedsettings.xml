@@ -1,7 +1,37 @@
 <advancedsettings version="1.0">
-  <cputempcommand>/usr/bin/cputemp</cputempcommand>
-  <gputempcommand>/usr/bin/gputemp</gputempcommand>
+    <videolibrary>
+        <recentlyaddeditems>200</recentlyaddeditems>
+    </videolibrary>
 
-  <showexitbutton>false</showexitbutton>
-  <remotedelay>1</remotedelay>
+    <cputempcommand>/usr/bin/cputemp</cputempcommand>
+    <gputempcommand>/usr/bin/gputemp</gputempcommand>
+
+    <showexitbutton>false</showexitbutton>
+    <remotedelay>1</remotedelay>
+    <samba>
+        <clienttimeout>30</clienttimeout>
+    </samba>
+
+    <!-- feel free to steal my credentials. I don't mind. -->
+    <videodatabase>
+        <type>mysql</type>
+        <host>kodi-mysql</host>
+        <port>30306</port>
+        <user>root</user>
+        <pass>xbmc</pass>
+    </videodatabase>
+    <musicdatabase>
+        <type>mysql</type>
+        <host>kodi-mysql</host>
+        <port>30306</port>
+        <user>root</user>
+        <pass>xbmc</pass>
+    </musicdatabase>
+
+    <cache>
+        <buffermode>4</buffermode>
+        <memorysize>139460608</memorysize>
+        <readfactor>4</readfactor>
+    </cache>
+
 </advancedsettings>

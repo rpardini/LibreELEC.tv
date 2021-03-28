@@ -27,7 +27,7 @@ mkimage_uEnv(){
   echo "image: creating uEnv.ini"
 cat << EOF > "${LE_TMP}/uEnv.ini"
 dtb_name=/dtb/${DTB}
-bootargs=boot=UUID=${UUID_SYSTEM} disk=UUID=${UUID_STORAGE} quiet ${EXTRA_CMDLINE}
+bootargs=boot=UUID=${UUID_SYSTEM} disk=UUID=${UUID_STORAGE} ${EXTRA_CMDLINE}
 EOF
   mcopy -s "${LE_TMP}/uEnv.ini" ::
 }
@@ -39,7 +39,7 @@ mkimage_extlinux(){
 LABEL ${DISTRO}
   LINUX /${KERNEL_NAME}
   FDT /${DTB}
-  APPEND boot=LABEL=${DISTRO_BOOTLABEL} disk=LABEL=${DISTRO_DISKLABEL} quiet ${EXTRA_CMDLINE}
+  APPEND boot=LABEL=${DISTRO_BOOTLABEL} disk=LABEL=${DISTRO_DISKLABEL} ${EXTRA_CMDLINE}
 EOF
   mcopy -s -o "${LE_TMP}/extlinux" ::
 }
