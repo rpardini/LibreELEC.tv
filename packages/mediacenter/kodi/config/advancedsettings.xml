@@ -1,4 +1,8 @@
 <advancedsettings version="1.0">
+  <videolibrary>
+    <recentlyaddeditems>200</recentlyaddeditems>
+  </videolibrary>
+
   <cputempcommand>/usr/bin/cputemp</cputempcommand>
   <gputempcommand>/usr/bin/gputemp</gputempcommand>
 
