@@ -40,6 +40,9 @@
 # setup project defaults
 ################################################################################
 
+  # build and install ALSA Audio support (yes / no)
+    ALSA_SUPPORT="no" # Try to use pulseaudio only
+
   # OpenGL(X) implementation to use (no / mesa)
     OPENGL="no"
 
