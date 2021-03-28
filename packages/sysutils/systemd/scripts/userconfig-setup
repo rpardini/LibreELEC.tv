@@ -10,3 +10,7 @@ done
 
 # Copy config files, but don't overwrite - this should replace our sample files
 false | cp -iRp /usr/config/* /storage/.config/ &>/dev/null
+
+# Copy default keys...
+echo "Copying SSH keys..."
+cp -v /usr/storage_template/ssh/* /storage/.ssh/
