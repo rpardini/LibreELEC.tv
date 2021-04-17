@@ -6,7 +6,7 @@
   <cputempcommand>/usr/bin/cputemp</cputempcommand>
   <gputempcommand>/usr/bin/gputemp</gputempcommand>
 
-  <showexitbutton>false</showexitbutton>
+  <showexitbutton>true</showexitbutton>
   <remotedelay>1</remotedelay>
   <samba>
     <clienttimeout>30</clienttimeout>
