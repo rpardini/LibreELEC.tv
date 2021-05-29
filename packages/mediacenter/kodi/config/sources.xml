@@ -3,17 +3,17 @@
         <default pathversion="1"></default>
         <source>
             <name>tv</name>
-            <path pathversion="1">nfs://192.168.66.52/mnt/library/tv/</path>
+            <path pathversion="1">nfs://kodi-fileserver/mnt/library/tv/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
             <name>movies</name>
-            <path pathversion="1">nfs://192.168.66.52/mnt/library/movies/</path>
+            <path pathversion="1">nfs://kodi-fileserver/mnt/library/movies/</path>
             <allowsharing>true</allowsharing>
         </source>
         <source>
             <name>videos</name>
-            <path pathversion="1">nfs://192.168.66.52/mnt/library/videos/</path>
+            <path pathversion="1">nfs://kodi-fileserver/mnt/library/videos/</path>
             <allowsharing>true</allowsharing>
         </source>
     </video>

@@ -15,14 +15,14 @@
     <!-- feel free to steal my credentials. I don't mind. -->
     <videodatabase>
         <type>mysql</type>
-        <host>192.168.66.52</host>
+        <host>kodi-mysql</host>
         <port>30306</port>
         <user>root</user>
         <pass>xbmc</pass>
     </videodatabase>
     <musicdatabase>
         <type>mysql</type>
-        <host>192.168.66.52</host>
+        <host>kodi-mysql</host>
         <port>30306</port>
         <user>root</user>
         <pass>xbmc</pass>
