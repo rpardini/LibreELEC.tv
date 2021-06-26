@@ -16,6 +16,11 @@
             <path pathversion="1">nfs://kodi-fileserver/mnt/library/videos/</path>
             <allowsharing>true</allowsharing>
         </source>
+        <source>
+            <name>streams</name>
+            <path pathversion="1">nfs://kodi-fileserver/mnt/adhoc/streams/</path>
+            <allowsharing>true</allowsharing>
+        </source>
     </video>
 
 
