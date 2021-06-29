@@ -202,7 +202,7 @@ devices = \
         'dtb': 'meson-g12b-odroid-n2.dtb',
         'config': 'odroid-n2_defconfig'
       },
-      'odroid-n2plus': {
+      'odroid-n2-plus': {
         'dtb': 'meson-g12b-odroid-n2-plus.dtb',
         'config': 'odroid-n2_defconfig'
       },
