@@ -100,7 +100,7 @@ case "${UBOOT_SYSTEM}" in
     dd if=$DESTDIR/u-boot.gxbb of=$DESTDIR/u-boot.bin.sd.bin conv=fsync,notrunc bs=512 seek=97
     ;;
 
-  odroid-n2)
+  odroid-n2*)
     cp $FIPDIR/bl301.bin $DESTDIR/
     cp $FIPDIR/acs.bin $DESTDIR/
     cp $FIPDIR/aml_ddr.fw $DESTDIR/
