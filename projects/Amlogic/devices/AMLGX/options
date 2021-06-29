@@ -37,4 +37,4 @@
     ADDON_PROJECT="ARMv8"
 
   # extra cmdline for my build
-    EXTRA_CMDLINE="ssh"
+    EXTRA_CMDLINE="systemd.debug_shell=ttyAML0 console=ttyAML0,115200n8 ssh"
