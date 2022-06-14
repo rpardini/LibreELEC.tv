@@ -341,6 +341,10 @@ devices = \
         'dtb': 'rk3399-sapphire.dtb',
         'config': 'evb-rk3399_defconfig'
       },
+      'tinkerboard2': {
+        'dtb': 'rk3399-tinker-2.dtb',
+        'config': 'evb-rk3399_defconfig'
+      },
     },
   },
   'Samsung': {
