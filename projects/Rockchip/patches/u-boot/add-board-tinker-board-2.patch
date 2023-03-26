@@ -1,9 +1,8 @@
-From cb3063c20471d6f5788dd5db51b946e9efc81589 Mon Sep 17 00:00:00 2001
+From e4f3dd04f4fec939ddf50d2a548429593d4db3ab Mon Sep 17 00:00:00 2001
 From: Ricardo Pardini <ricardo@pardini.net>
 Date: Sun, 26 Mar 2023 10:20:59 +0000
-Subject: [PATCH] tb2 tony
+Subject: [PATCH] Tinkerboard2 u-boot patches from Tony, updated for 22.10
 
-fixed config
 ---
  arch/arm/dts/Makefile                         |   1 +
  arch/arm/dts/rk3399-tinker-2-u-boot.dtsi      |  60 ++
@@ -12,12 +11,12 @@ fixed config
  board/rockchip/tinker-2_rk3399/Kconfig        |  15 +
  board/rockchip/tinker-2_rk3399/Makefile       |   7 +
  .../tinker-2_rk3399/tinker-2-rk3399.c         |  56 ++
- configs/tinker-2-rk3399_defconfig             |  76 +++
+ configs/tinker-2-rk3399_defconfig             |  78 +++
  drivers/power/pmic/fan53555.c                 |   1 +
  drivers/power/regulator/fan53555.c            |   2 +
- include/configs/tinker-2_rk3399.h             |  22 +
+ include/configs/tinker-2_rk3399.h             |  18 +
  include/power/fan53555.h                      |   1 +
- 12 files changed, 758 insertions(+)
+ 12 files changed, 756 insertions(+)
  create mode 100644 arch/arm/dts/rk3399-tinker-2-u-boot.dtsi
  create mode 100644 arch/arm/dts/rk3399-tinker-2.dts
  create mode 100644 board/rockchip/tinker-2_rk3399/Kconfig
@@ -742,10 +741,10 @@ index 0000000000..d79084614f
 +#endif
 diff --git a/configs/tinker-2-rk3399_defconfig b/configs/tinker-2-rk3399_defconfig
 new file mode 100644
-index 0000000000..ab3d87f16b
+index 0000000000..a8b9c34156
 --- /dev/null
 +++ b/configs/tinker-2-rk3399_defconfig
-@@ -0,0 +1,76 @@
+@@ -0,0 +1,78 @@
 +CONFIG_ARM=y
 +CONFIG_SKIP_LOWLEVEL_INIT=y
 +CONFIG_ARCH_ROCKCHIP=y
@@ -822,6 +821,8 @@ index 0000000000..ab3d87f16b
 +CONFIG_DISPLAY_ROCKCHIP_HDMI=y
 +CONFIG_SPL_TINY_MEMSET=y
 +CONFIG_ERRNO_STR=y
++CONFIG_HAS_CUSTOM_SYS_INIT_SP_ADDR=y
++CONFIG_CUSTOM_SYS_INIT_SP_ADDR=0x300000
 diff --git a/drivers/power/pmic/fan53555.c b/drivers/power/pmic/fan53555.c
 index 4d1e686d27..8fba05ff95 100644
 --- a/drivers/power/pmic/fan53555.c
@@ -849,10 +850,10 @@ index 5681206bba..ca275a15f9 100644
  	/* SYL82X */
 diff --git a/include/configs/tinker-2_rk3399.h b/include/configs/tinker-2_rk3399.h
 new file mode 100644
-index 0000000000..3631560266
+index 0000000000..885b9025eb
 --- /dev/null
 +++ b/include/configs/tinker-2_rk3399.h
-@@ -0,0 +1,22 @@
+@@ -0,0 +1,18 @@
 +/* SPDX-License-Identifier: GPL-2.0+ */
 +/*
 + * (C) Copyright 2021 Thomas McKahan <tmckahan@singleboardsolutions.com>
@@ -869,10 +870,6 @@ index 0000000000..3631560266
 +#include <configs/rk3399_common.h>
 +
 +#define SDRAM_BANK_SIZE			(2UL << 30)
-+
-+#define CONFIG_USB_OHCI_NEW
-+#define CONFIG_SYS_USB_OHCI_MAX_ROOT_PORTS     2
-+
 +
 +#endif
 diff --git a/include/power/fan53555.h b/include/power/fan53555.h
