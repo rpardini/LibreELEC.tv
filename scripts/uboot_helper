@@ -363,7 +363,7 @@ devices = \
       },
       'tinkerboard2': {
         'dtb': 'rk3399-tinker-2.dtb',
-        'config': 'tinker-2-rk3399',
+        'config': 'tinker-2-rk3399_defconfig',
         'rockchip_legacy_boot': '1'
       },
     },
