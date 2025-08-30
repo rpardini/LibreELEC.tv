@@ -4,6 +4,10 @@
     <showexitbutton>false</showexitbutton>
     <remotedelay>1</remotedelay>
 
+    <videolibrary>
+        <recentlyaddeditems>200</recentlyaddeditems>
+    </videolibrary>
+
     <!-- feel free to steal my credentials. I don't mind. -->
     <videodatabase>
         <type>mysql</type>
