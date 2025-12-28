@@ -18,6 +18,24 @@ if [ -z "${SYSTEM_SIZE}" -o -z "${SYSTEM_PART_START}" ]; then
   exit 1
 fi
 
+# Hack: add size of stuff + 25% overhead to STORAGE_SIZE
+EXTRA_STORAGE_DIR="${TARGET_IMG}/extra_storage"
+echo "image: calculating extra storage size..."
+echo "image: scanning ${EXTRA_STORAGE_DIR}..."
+declare extra_storage_size_megabyte=0
+if [ -d "${EXTRA_STORAGE_DIR}" ]; then
+	echo "image: calculating size of ${EXTRA_STORAGE_DIR}..."
+	extra_storage_size_megabyte=$(du -sm "${EXTRA_STORAGE_DIR}" | awk '{print $1}')
+	echo "image: size of ${EXTRA_STORAGE_DIR} is ${extra_storage_size_megabyte} MB"
+	# add 25% overhead
+	extra_storage_size_megabyte=$((extra_storage_size_megabyte + extra_storage_size_megabyte / 4))
+	echo "image: size of ${EXTRA_STORAGE_DIR} with 25% overhead is ${extra_storage_size_megabyte} MB"
+else
+	echo "image: ${EXTRA_STORAGE_DIR} does not exist, skipping..."
+fi
+STORAGE_SIZE=$((STORAGE_SIZE + extra_storage_size_megabyte))
+echo "image: final STORAGE_SIZE is ${STORAGE_SIZE} MB"
+
 DISK_START_PADDING=$(((${SYSTEM_PART_START} + 2048 - 1) / 2048))
 DISK_GPT_PADDING=1
 DISK_SIZE=$((${DISK_START_PADDING} + ${SYSTEM_SIZE} + ${STORAGE_SIZE} + ${DISK_GPT_PADDING}))
@@ -100,6 +118,10 @@ sync
 # add resize mark
 mkdir "${IMG_TMP}/part2.fs"
 touch "${IMG_TMP}/part2.fs/.please_resize_me"
+echo "image: prepopulate storage with EXTRA_STORAGE_DIR..."
+if [ -d "${EXTRA_STORAGE_DIR}" ]; then
+  cp -rp "${EXTRA_STORAGE_DIR}/." "${IMG_TMP}/part2.fs/"
+fi
 echo "image: populating filesystem on part2..."
 populatefs -U -d "${IMG_TMP}/part2.fs" "${IMG_TMP}/part2.ext4" >"${SAVE_ERROR}" 2>&1 || show_error
 sync
