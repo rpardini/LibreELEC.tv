@@ -669,7 +669,7 @@ devices = \
       },
       'cm3588-nas': {
         'config': 'cm3588-nas-rk3588_defconfig',
-        'dtb': 'rk3588-friendlyelec-cm3588-nas.dtb'
+        'dtb': 'rk3588-friendlyelec-cm3588-nas-40pin-pwm-fan.dtb'
       },
       'khadas-edge2': {
         'config': 'khadas-edge2-rk3588s_defconfig',
