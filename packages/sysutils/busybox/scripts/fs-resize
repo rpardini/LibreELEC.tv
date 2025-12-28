@@ -22,13 +22,10 @@ if [ -e /storage/.please_resize_me ] ; then
 
   # this sh** was never intended to be used
   # on an already installed and running system
+  has_data=0
   if [ -d /storage/.kodi -o -d /storage/.config -o -d /storage/.cache ] ; then
-    rm -f /storage/.please_resize_me
-    sync
-    echo "Resizing is not permitted - the system has already been initialised." | tee -a $LOG
-    mount -o remount,ro /flash
-    StartProgress countdown "Rebooting in 15s... " 15 "NOW"
-    reboot -f
+    echo "Data present on /storage, resizing instead of recreating. Experimental." | tee -a $LOG
+    has_data=1
   fi
 
   # get the disk. /storage on 2nd partition
@@ -63,7 +60,16 @@ if [ -e /storage/.please_resize_me ] ; then
     echo ""
 
     StartProgressLog spinner "Resizing partition...   " "parted -s -f -m $DISK resizepart 2 100% >>$LOG 2>&1"
-    StartProgressLog spinner "Creating file system... " "mke2fs -F -q -t ext4 -m 0 -L \"$LABEL\" -U \"$UUID\" $PART >>$LOG 2>&1"
+
+    if [ $has_data -eq 1 ] ; then
+      echo "Storage has data, resizing filesystem instead of creating new one." | tee -a $LOG
+      StartProgressLog spinner "Checking file system before resize... " "e2fsck -f -p $PART >>$LOG 2>&1"
+      StartProgressLog spinner "Resizing file system... " "resize2fs $PART >>$LOG 2>&1"
+      StartProgressLog spinner "Checking file system after resize... " "e2fsck -f -p $PART >>$LOG 2>&1"
+    else
+      StartProgressLog spinner "Creating file system... " "mke2fs -F -q -t ext4 -m 0 -L \"$LABEL\" -U \"$UUID\" $PART >>$LOG 2>&1"
+    fi
+
     StartProgressLog spinner "Checking file system... " "e2fsck -f -p $PART >>$LOG 2>&1"
     StartProgress countdown "Rebooting in 15s...     " 15 "NOW"
   else
