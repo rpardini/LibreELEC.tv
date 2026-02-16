@@ -1,4 +1,5 @@
 rockchip/*
+brcm/*
 ath9k_htc
 mediatek/mt7668pr2h.bin
 mediatek/*MT7961*.bin
