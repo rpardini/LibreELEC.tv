@@ -671,6 +671,10 @@ devices = \
         'config': 'cm3588-nas-rk3588_defconfig',
         'dtb': 'rk3588-friendlyelec-cm3588-nas-40pin-pwm-fan.dtb'
       },
+      'meko-r58x-4g': {
+        'config': 'generic-rk3588_defconfig',
+        'dtb': 'rk3588-blueberry-edge-v12-linux.dtb'
+      },
       'khadas-edge2': {
         'config': 'khadas-edge2-rk3588s_defconfig',
         'dtb': ''
