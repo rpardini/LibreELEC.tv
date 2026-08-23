@@ -7,7 +7,7 @@ PKG_VERSION="1.16.2"
 PKG_SHA256="0ba2a1a4b16afe7bceb2c07e9ce99a8c2c3508e5dec290dbb643384bd6beb7e2"
 PKG_LICENSE="AFL-2.1 OR GPL-2.0-or-later"
 PKG_SITE="https://dbus.freedesktop.org"
-PKG_URL="https://dbus.freedesktop.org/releases/${PKG_NAME}/${PKG_NAME}-${PKG_VERSION}.tar.xz"
+PKG_URL="https://mirrors.slackware.com/slackware/slackware64-current/source/a/dbus/dbus-${PKG_VERSION}.tar.xz"
 PKG_DEPENDS_TARGET="meson:host gcc:host expat systemd"
 PKG_LONGDESC="D-Bus is a message bus, used for sending messages between applications."
 
