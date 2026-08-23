@@ -7,7 +7,7 @@ PKG_VERSION="2.48"
 PKG_SHA256="b77041324f0109f77161ee43743fe04baa485866af8460d31e476ad3f7648fd5"
 PKG_LICENSE="MIT AND HPND AND HPND-sell-variant"
 PKG_SITE="https://www.X.org"
-PKG_URL="https://www.x.org/releases/individual/data/${PKG_NAME}/${PKG_NAME}-${PKG_VERSION}.tar.xz"
+PKG_URL="http://deb.debian.org/debian/pool/main/x/xkeyboard-config/xkeyboard-config_${PKG_VERSION}.orig.tar.xz"
 PKG_DEPENDS_TARGET="toolchain util-macros"
 PKG_LONGDESC="X keyboard extension data files."
 
