@@ -1,7 +1,7 @@
 From f4fff38020e29db74589ba377672d574a72e66a7 Mon Sep 17 00:00:00 2001
 From: Ricardo Pardini <ricardo@pardini.net>
 Date: Mon, 24 Aug 2026 16:54:46 +0200
-Subject: [PATCH 2/2] avfilter/deinterlace_v4l2m2m: Reject frame layouts that
+Subject: [PATCH 2/3] avfilter/deinterlace_v4l2m2m: Reject frame layouts that
  are not understood
 
 The DRM frame descriptor is mapped to a V4L2 pixel format using only

@@ -1,7 +1,7 @@
-From 171d505a4756d78f491029f6e55e4eb278988dbb Mon Sep 17 00:00:00 2001
+From 9f3e1320aed99e6cbf52fcc866c02ef4602faade Mon Sep 17 00:00:00 2001
 From: Jonas Karlman <jonas@kwiboo.se>
 Date: Sun, 20 Oct 2019 17:10:07 +0000
-Subject: [PATCH 1/2] WIP: DVDVideoCodecDRMPRIME: add support for filters
+Subject: [PATCH 1/6] WIP: DVDVideoCodecDRMPRIME: add support for filters
 
 ---
  .../DVDCodecs/Video/DVDVideoCodecDRMPRIME.cpp | 62 +++++++++++++++++--
@@ -9,7 +9,7 @@ Subject: [PATCH 1/2] WIP: DVDVideoCodecDRMPRIME: add support for filters
  2 files changed, 66 insertions(+), 6 deletions(-)
 
 diff --git a/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.cpp b/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.cpp
-index fbb9f49..eedae98 100644
+index fbb9f492a2..eedae98f89 100644
 --- a/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.cpp
 +++ b/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.cpp
 @@ -29,6 +29,8 @@
@@ -101,7 +101,7 @@ index fbb9f49..eedae98 100644
    int piWidth, piHeight;
    m_processInfo.GetVideoDimensions(piWidth, piHeight);
 diff --git a/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.h b/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.h
-index 4c78c58..a452212 100644
+index 4c78c58df6..a4522124ea 100644
 --- a/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.h
 +++ b/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.h
 @@ -14,6 +14,11 @@
@@ -136,5 +136,5 @@ index 4c78c58..a452212 100644
    std::shared_ptr<CVideoBufferPoolDMA> m_swVideoBufferPool;
  };
 -- 
-2.47.1
+2.55.0
 

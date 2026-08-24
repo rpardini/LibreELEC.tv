@@ -1,7 +1,7 @@
-From 7df6ed3d9759dda941a774671c7c98675325a40e Mon Sep 17 00:00:00 2001
+From a7b385cb6e24f3da375531d266b9110a8140570d Mon Sep 17 00:00:00 2001
 From: Jernej Skrabec <jernej.skrabec@siol.net>
 Date: Thu, 26 Dec 2019 11:01:51 +0100
-Subject: [PATCH 2/2] WIP: DRMPRIME deinterlace filter
+Subject: [PATCH 2/6] WIP: DRMPRIME deinterlace filter
 
 DVDVideoCodecDRMPRIME: Avoid exception with AV_PIX_FMT_NONE
 
@@ -29,7 +29,7 @@ and it may (later) influence the choice of deinterlacers available.
  2 files changed, 364 insertions(+), 63 deletions(-)
 
 diff --git a/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.cpp b/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.cpp
-index eedae98..9f91aea 100644
+index eedae98f89..9f91aeae03 100644
 --- a/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.cpp
 +++ b/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.cpp
 @@ -93,12 +93,15 @@ CDVDVideoCodecDRMPRIME::CDVDVideoCodecDRMPRIME(CProcessInfo& processInfo)
@@ -538,7 +538,7 @@ index eedae98..9f91aea 100644
    return VC_PICTURE;
  }
 diff --git a/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.h b/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.h
-index a452212..585bba2 100644
+index a4522124ea..585bba258b 100644
 --- a/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.h
 +++ b/xbmc/cores/VideoPlayer/DVDCodecs/Video/DVDVideoCodecDRMPRIME.h
 @@ -41,19 +41,27 @@ public:
@@ -571,5 +571,5 @@ index a452212..585bba2 100644
    AVFilterContext* m_pFilterIn = nullptr;
    AVFilterContext* m_pFilterOut = nullptr;
 -- 
-2.47.1
+2.55.0
 
